@@ -1,38 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.example.ydc.androidlearning.activitys.ActivityLearn">
+    tools:context="com.example.ydc.androidlearning.activitys.ActivityLearnJumpActivity">
 
     <EditText
-        android:id="@+id/et_activity_learn_info"
+        android:id="@+id/et_activity_learn_jump_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/input_info_hint">
+        android:hint="@string/activity_learn_disp_info">
 
         <requestFocus />
     </EditText>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_activity_learn_jump_info"
+        android:orientation="horizontal">
 
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="generalJump"
-            android:text="@string/general_jump" />
+            android:onClick="generalReturn"
+            android:text="@string/general_return" />
 
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="callbackJump"
-            android:text="@string/callback_jump" />
+            android:onClick="callbackReturn"
+            android:text="@string/callback_return" />
 
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

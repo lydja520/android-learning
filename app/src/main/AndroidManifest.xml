@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ydc.androidlearning">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,7 +17,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activitys.ActivityLearn"></activity>
+        <activity android:name=".activitys.ActivityLearn" />
+        <activity android:name=".activitys.IntentLearn" />
+        <activity android:name=".activitys.IntentLearnDistint" />
+        <activity android:name=".activitys.ActivityLearnJumpActivity" />
+        <activity android:name=".activitys.ComponentLearnActivity"></activity>
     </application>
 
 </manifest>

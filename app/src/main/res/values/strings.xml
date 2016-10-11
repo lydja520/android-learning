@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Android Learning</string>
+    <string name="activity_learn">Activity学习</string>
+    <string name="input_info_hint">请输入信息</string>
+    <string name="general_jump">一般跳转</string>
+    <string name="callback_jump">带回调的跳转</string>
+    <string name="android_learn">Android学习</string>
+    <string name="intent_learn">Intent学习</string>
+    <string name="distinct_intent">显式Intent</string>
+    <string name="hide_intent">隐式Intent</string>
+    <string name="activity_learn_disp_info">传过来的信息，输入的信息也可返回</string>
+    <string name="general_return">普通返回</string>
+    <string name="callback_return">带回调的返回</string>
+    <string name="ui_component_learn">UI-Component学习</string>
+    <string name="phone">电话</string>
+    <string name="submit">提交</string>
+    <string name="reset">重置</string>
+    <string name="interest">爱好：</string>
+    <string name="basketball">篮球</string>
+    <string name="pingpang">乒乓球</string>
+    <string name="confirm">确认</string>
 </resources>
