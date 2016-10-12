@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+        <item
+            android:id="@+id/option_menu_item_update"
+            android:icon="@android:drawable/star_big_on"
+            android:title="@string/update" />
+
+        <item
+            android:id="@+id/option_menu_item_del"
+            android:icon="@android:drawable/star_big_on"
+            android:title="@string/delete" />
+    </group>
+
+    <group>
+
+        <item
+            android:id="@+id/option_menu_item_publish"
+            android:icon="@android:drawable/star_big_off"
+            android:title="@string/publish" />
+
+        <item
+            android:id="@+id/option_menu_item_share"
+            android:icon="@android:drawable/star_big_off"
+            android:title="@string/share" />
+    </group>
+
+
+</menu>
