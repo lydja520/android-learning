@@ -124,6 +124,7 @@
         android:src="@android:drawable/ic_media_play" />
 
     <LinearLayout
+        android:id="@+id/linear_layout_interest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_displyVideo"
@@ -157,7 +158,61 @@
             android:id="@+id/btn_interest_confirm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="confirmInterest"
             android:text="@string/confirm" />
+
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/rg_component_learn_sex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear_layout_interest"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sex" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/man" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/woman" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tv_activity_component_sex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rg_component_learn_sex"
+        android:text="你选择的性别是：" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_activity_component_sex"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:textColor="@color/red"
+            android:text="上下文菜单" />
+
+        <Button
+            android:id="@+id/btn_main_component_learn_contextMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="长按显示上下文菜单" />
 
     </LinearLayout>
 

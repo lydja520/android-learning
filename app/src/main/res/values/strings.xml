@@ -19,4 +19,7 @@
     <string name="basketball">篮球</string>
     <string name="pingpang">乒乓球</string>
     <string name="confirm">确认</string>
+    <string name="man">男</string>
+    <string name="woman">女</string>
+    <string name="sex">性别：</string>
 </resources>
