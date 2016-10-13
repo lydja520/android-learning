@@ -1,8 +1,10 @@
 package com.example.ydc.androidlearning.activitys;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.UiThread;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.ContextMenu;
@@ -74,6 +76,13 @@ public class ComponentLearnActivity extends AppCompatActivity {
         btn_time_select_dialog = (Button) this.findViewById(R.id.btn_time_select_dialog);
         btn_custom_layout_dialog = (Button) this.findViewById(R.id.btn_custom_layout_dialog);
 
+        this.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(ComponentLearnActivity.this, "测试===============", Toast.LENGTH_LONG).show();
+            }
+        });
+
         /**
          *为CheckBox设置监听器
          */
@@ -114,6 +123,7 @@ public class ComponentLearnActivity extends AppCompatActivity {
         /**
          *为seekbar添加监听
          */
+
         sb_change_value.setOnSeekBarChangeListener(new OnSeekBarChangeListenerAdapter() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -172,6 +182,9 @@ public class ComponentLearnActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * 带单选条目的对话框
+         */
         btn_single_select_dialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -188,6 +201,36 @@ public class ComponentLearnActivity extends AppCompatActivity {
                         .show();
             }
         });
+
+        btn_progress_bar_dialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final ProgressDialog progressDialog = ProgressDialog.show(ComponentLearnActivity.this, null, "加载中……", false, true, null);
+
+                new Thread() {
+                    @Override
+                    public void run() {
+                        super.run();
+                        try {
+                            Thread.sleep(3000);
+                            progressDialog.dismiss();
+
+                            ComponentLearnActivity.this.runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(ComponentLearnActivity.this, "加载完成", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }.start();
+
+            }
+        });
+
     }
 
     @Override
