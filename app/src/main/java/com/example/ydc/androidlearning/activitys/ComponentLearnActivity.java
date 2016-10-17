@@ -1,12 +1,14 @@
 package com.example.ydc.androidlearning.activitys;
 
+import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
+import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.UiThread;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -15,6 +17,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -22,11 +25,14 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.ydc.androidlearning.R;
 import com.example.ydc.androidlearning.adapter.OnSeekBarChangeListenerAdapter;
 import com.example.ydc.androidlearning.utils.StringUtils;
+
+import java.util.Calendar;
 
 public class ComponentLearnActivity extends AppCompatActivity {
 
@@ -49,6 +55,8 @@ public class ComponentLearnActivity extends AppCompatActivity {
     private Button btn_year_select_dialog;
     private Button btn_time_select_dialog;
     private Button btn_custom_layout_dialog;
+    private EditText et_component_learn_date_select;
+    private EditText et_component_learn_time_select;
 
     private String pwd;
     private boolean displyFlage = false;
@@ -72,9 +80,11 @@ public class ComponentLearnActivity extends AppCompatActivity {
         btn_single_select_dialog = (Button) this.findViewById(R.id.btn_single_select_dialog);
         btn_progress_bar_dialog = (Button) this.findViewById(R.id.btn_progress_bar_dialog);
         btn_progress_bar1_dialog = (Button) this.findViewById(R.id.btn_progress_bar1_dialog);
-        btn_year_select_dialog = (Button) this.findViewById(R.id.btn_single_select_dialog);
+        btn_year_select_dialog = (Button) this.findViewById(R.id.btn_year_select_dialog);
         btn_time_select_dialog = (Button) this.findViewById(R.id.btn_time_select_dialog);
         btn_custom_layout_dialog = (Button) this.findViewById(R.id.btn_custom_layout_dialog);
+        et_component_learn_date_select = (EditText) this.findViewById(R.id.et_component_learn_date_select);
+        et_component_learn_time_select = (EditText) this.findViewById(R.id.et_component_learn_time_select);
 
         this.runOnUiThread(new Runnable() {
             @Override
@@ -228,6 +238,84 @@ public class ComponentLearnActivity extends AppCompatActivity {
                     }
                 }.start();
 
+            }
+        });
+
+        btn_progress_bar1_dialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final ProgressDialog progressDialog = new ProgressDialog(ComponentLearnActivity.this);
+                progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+                progressDialog.setTitle("下载进度");
+                progressDialog.setMax(100);
+                progressDialog.show();
+
+                new Thread() {
+                    @Override
+                    public void run() {
+                        super.run();
+                        for (int i = 0; i <= 100; i++) {
+                            try {
+                                Thread.sleep(200);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                            progressDialog.setProgress(i);
+                            if (progressDialog.getProgress() == progressDialog.getMax()) {
+                                progressDialog.dismiss();
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toast.makeText(ComponentLearnActivity.this, "下载完成", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                            }
+                        }
+                    }
+                }.start();
+            }
+        });
+
+
+        btn_year_select_dialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar calendar = Calendar.getInstance();
+                int year = calendar.get(Calendar.YEAR);
+                int monthOfYear = calendar.get(Calendar.MONTH);
+                int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
+                Log.d("TAG", year + "-" + monthOfYear + "-" + dayOfMonth);
+
+
+                DatePickerDialog datePickerDialog = new DatePickerDialog(ComponentLearnActivity.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        String date = year + "-" + monthOfYear + "-" + dayOfMonth;
+                        et_component_learn_date_select.setText(date);
+                    }
+                }, year, monthOfYear, dayOfMonth);
+
+                datePickerDialog.show();
+            }
+        });
+
+        btn_time_select_dialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar calendar = Calendar.getInstance();
+                final int hour_of_day = calendar.get(Calendar.HOUR_OF_DAY);
+                int minutes = calendar.get(Calendar.MINUTE);
+                Log.d("TAG", hour_of_day + ":" + minutes);
+
+                TimePickerDialog timePickerDialog = new TimePickerDialog(ComponentLearnActivity.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        String time = hour_of_day + ":" + minute;
+                        et_component_learn_time_select.setText(time);
+                    }
+                }, hour_of_day, minutes, true);
+
+                timePickerDialog.show();
             }
         });
 

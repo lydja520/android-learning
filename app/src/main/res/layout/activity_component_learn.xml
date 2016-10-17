@@ -290,11 +290,23 @@
                 android:layout_height="wrap_content"
                 android:text="带年月选择的对话框" />
 
+            <EditText
+                android:id="@+id/et_component_learn_date_select"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_shap" />
+
             <Button
                 android:id="@+id/btn_time_select_dialog"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="带日期选择的对话框" />
+
+            <EditText
+                android:id="@+id/et_component_learn_time_select"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_shap" />
 
             <Button
                 android:id="@+id/btn_custom_layout_dialog"

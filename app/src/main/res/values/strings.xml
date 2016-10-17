@@ -28,4 +28,10 @@
     <string name="delete">删除</string>
     <string name="loading">加载中……</string>
     <string name="text_view_learn">TextView学习</string>
+    <string name="ui_component_learn2">UI-COMPONET2学习</string>
+    <string name="liner_layout_learn">LinearLayout学习</string>
+    <string name="relative_layout_learn">RelativeLayout学习</string>
+    <string name="list_view_learn">ListView学习</string>
+    <string name="base_adapter_info">BaseAdapter,所有ListViewAdapter继承于此adapter</string>
+    <string name="array_adapter_info">ArrayAdapter</string>
 </resources>
