@@ -24,6 +24,9 @@
         <activity android:name=".activitys.ComponentLearnActivity" />
         <activity android:name=".activitys.ComponentLearn2Activity" />
         <activity android:name=".activitys.ListViewLearn" />
+        <activity android:name=".activitys.ArrayAdapterLearn" />
+        <activity android:name=".activitys.SimpleAdapterLearn" />
+        <activity android:name=".activitys.BaseAdapterLearn"></activity>
     </application>
 
 </manifest>

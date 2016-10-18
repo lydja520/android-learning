@@ -4,28 +4,22 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/base_adapter_info"
-        android:textColor="@color/blue"
-        android:textSize="20dp" />
+        android:onClick="arrayAdapterLearn"
+        android:text="@string/array_adapter_learn" />
 
-    <ListView
-        android:id="@+id/lv_list_view_learn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"></ListView>
-
-    <TextView
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/array_adapter_info"
-        android:textColor="@color/blue"
-        android:textSize="20dp" />
+        android:onClick="simpleAdapterLearn"
+        android:text="@string/simple_adapter_learn" />
 
-    <ListView
-        android:id="@+id/lv_list_view_learn2"
+    <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></ListView>
+        android:layout_height="wrap_content"
+        android:onClick="baseAdapterLearn"
+        android:text="@string/base_adapter_learn" />
 
 </LinearLayout>

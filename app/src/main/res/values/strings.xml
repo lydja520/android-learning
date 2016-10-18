@@ -34,4 +34,9 @@
     <string name="list_view_learn">ListView学习</string>
     <string name="base_adapter_info">BaseAdapter,所有ListViewAdapter继承于此adapter</string>
     <string name="array_adapter_info">ArrayAdapter</string>
+    <string name="array_adapter_learn">ArrayAdapter学习</string>
+    <string name="simple_adapter_learn">SimpleAdapter学习</string>
+    <string name="base_adapter_learn">BaseAdapter学习</string>
+    <string name="name">名字</string>
+    <string name="price">价格</string>
 </resources>
